@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Vazirmatn', 'IRANSansX', 'Shabnam', sans-serif;
+  background-color: #F8FAFC;
+  color: #0F172A;
+  line-height: 1.5;
+}
+
+.dark body {
+  background-color: #0B1220;
+  color: #E2E8F0;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+}
+
+*:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-slate-800/80 rounded-2xl shadow-card border border-slate-200/70 dark:border-slate-700/60;
+  }
+  .field {
+    @apply w-full rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-900/50 px-4 py-3 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none transition focus:border-primary focus:bg-white dark:focus:bg-slate-900;
+  }
+  .label {
+    @apply block mb-2 text-sm font-medium text-slate-600 dark:text-slate-300;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 font-medium text-white transition hover:bg-primary-700 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 px-4 py-3 font-medium text-slate-700 dark:text-slate-200 transition hover:bg-slate-50 dark:hover:bg-slate-700 active:scale-[0.98];
+  }
+}
